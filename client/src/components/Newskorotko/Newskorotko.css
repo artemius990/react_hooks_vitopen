@@ -1,0 +1,21 @@
+/*стили для страниц новостей*/
+.ColumnRight_news,
+.ColumnRight_news2 {
+  width: 20%;
+  float: left;
+  margin-left: 5%;
+  background-color: #fafafa;
+  border-radius: 5px;
+  border: 1px solid silver;
+  box-sizing: border-box;
+  padding: 1%;
+  margin-top: 10px;
+  overflow: scroll;
+}
+
+.ColumnRight_news {
+  height: 550px;
+}
+
+
+

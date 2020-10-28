@@ -1,0 +1,26 @@
+.main2_soc_block_in {
+    text-align: center;
+    padding: 1%;
+    height: 200px;
+    background-color: #fafafa;
+    border: 1px solid silver;
+    border-radius: 7px;
+    width: 500px;
+  /*для оптимизации блока в различных браузерах и устройствах*/
+    /*max-width: 98%;*/
+    box-sizing: border-box;
+  }
+  
+  .nav {
+    float: left;
+    padding: 5px 10px;
+    background-color: indigo;
+    border-radius: 5px;
+    color: #fff;
+    margin-left: 35%;
+    margin-top: 15px;
+  }
+
+  h3{
+    color: indigo;
+  }

@@ -1,0 +1,55 @@
+.h2-4 {
+	height: 1000px;
+	width: 100%;
+	margin: 15px 0;
+	background: #fff;
+	border-radius: 5%;	
+	overflow: scroll;
+	padding: 5px;
+}
+
+@media (min-width: 768px) {
+	.h2-md-4 {
+		height: 1000px;
+		width: 100%;
+		margin: 15px 0;
+		background: #fff;
+		overflow: scroll;
+		padding: 5px;
+	}
+}
+
+@media (min-width: 1200px) {
+
+	.h2-xl-4 {
+		height: 1000px;
+		width: 100%;
+		margin: 15px 0;
+		background: #fff;
+		border-radius: 5%;
+		overflow: scroll;
+		padding: 5px;
+	}
+}
+
+
+.zag_av {
+	font-size: 3ex;
+	text-align: center;
+	color: indigo;
+}
+
+.img_av {
+	margin: 0 5% 0 5%;
+	width: 90%;
+	/* height:200px; */
+}
+
+.vit {
+padding: 5px;
+	
+}	 
+
+h4{
+    color: indigo;
+  }

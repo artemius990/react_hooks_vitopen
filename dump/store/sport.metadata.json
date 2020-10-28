@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"store.sport"}],"uuid":"4194fb0adf694bca96659dfb3559f81b"}

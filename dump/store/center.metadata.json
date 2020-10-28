@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"store.center"}],"uuid":"08b997f254a34a23987ba1723cba9af6"}

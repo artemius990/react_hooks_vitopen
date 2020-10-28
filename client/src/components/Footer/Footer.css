@@ -1,0 +1,16 @@
+footer {
+    color:rgb(34, 3, 46);
+    background: url(../../images/footer.jpg);
+    background-size: 100% 100%;
+    min-height: 300px;
+    font-weight: bold;
+    font-size: 2ex;
+  
+    border-top: 2px;
+    margin-top: 10px;
+    padding-bottom: 2%;
+
+    width: 100%;
+    float: left;
+    padding: 1%;
+  }

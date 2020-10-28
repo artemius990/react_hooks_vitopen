@@ -1,0 +1,122 @@
+.h-1{
+	height: 120px;
+	width:100%;
+	margin: 15px 0;
+	background: #fff;
+	border-radius: 2%;
+}
+.h-2{
+	height: 470px;
+	width:100%;
+	margin: 15px 0;
+	background: #fff;
+	border-radius: 2%;
+}
+.h-4{
+	height: 970px;
+	width:100%;
+	margin: 15px 0;
+	background: #fff;
+	border-radius: 2%;
+}
+@media (min-width: 768px){
+	.h-md-1{
+		height: 120px;
+		width:100%;
+		margin: 15px 0;
+		background: #fff;
+		border-radius: 2%;
+	}
+	.h-md-2{
+		height: 470px;
+		width:100%;
+		margin: 15px 0;
+		background: #fff;
+		border-radius: 2%;
+	}
+	.h-md-4{
+	height: 970px;
+	width:100%;
+	margin: 15px 0;
+	background: #fff;
+	border-radius: 2%;
+	}	
+}
+@media (min-width: 1200px){
+	.h-xl-1{
+		height: 120px;
+		width:100%;
+		margin: 15px 0;
+		background: #fff;
+		border-radius: 2%;
+	}
+	.h-xl-2{
+		height: 470px;
+		width:100%;
+		margin: 15px 0;
+		background: #fff;
+		border-radius: 2%;
+	}
+	.h-xl-4{
+	height: 970px;
+	width:100%;
+	margin: 15px 0;
+	background: #fff;
+	border-radius: 2%;
+	}	
+}
+
+/*стили для афиши*/
+.afisha {
+    width: 70%;
+    float: left;
+    background-color: #fafafa;
+    border-radius: 2px;
+    border: 1px solid silver;
+    box-sizing: border-box;
+    padding: 1%;
+    /* margin:10px; */
+	height: 650px; 
+	margin-left:5px; 
+  }  
+  
+  .afisha_img{
+	margin-top:5px;
+	margin-left:5px;
+	margin-right:5px;
+    width:45%;
+    height:200px;
+  }
+  
+  .af_h1, .af_h3{
+    color:rebeccapurple;
+  }
+  
+  .af_h3{
+    padding-right:5px;
+  }
+  
+  .af_f{
+	font-size: 0.9em;
+	margin-left:5px;
+	margin-right:5px;
+  }
+  .a_p{
+    margin:10px;
+  }
+  
+  .ColumnRight_af{
+    width: 25%;
+    float: both;
+    margin-left: 5%;
+    background-color: #fafafa;
+    border-radius: 5px;
+    border: 1px solid silver;
+    box-sizing: border-box;
+    padding: 1%;
+    margin-bottom: 20%;
+    overflow: scroll; 
+    height: 600px;   
+  } 
+  
+  

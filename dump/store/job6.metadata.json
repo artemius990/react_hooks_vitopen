@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"store.job6"}],"uuid":"d7030ab8bbc145568e5ff4c47bc98962"}
