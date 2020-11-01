@@ -5,18 +5,22 @@ function Aboutus() {
   
   const [aboutus, setAboutus] = useState([])
 
-  // const [loading, setLoading] = useState(false)
-  // const toggle = React.useCallback(() => setLoading(!loading));
-
-  // const addLoading = () => {
-  //   setLoading(loading)
-  // }
+  const [loading, setLoading] = useState(false) 
 
   useEffect(() => {
+    setLoading(!loading)
     fetch('/aboutus')
-      .then((res) => res.json())
+      .then(res => res.json())
       .then((aboutus) => setAboutus(aboutus))
+      .then((loading) => setLoading(loading))
   }, [])
+
+  // useEffect(() => {
+  //   setLoading(true)
+  //   fetch('/aboutus')
+  //     .then((res) => res.json())
+  //     .then((aboutus) => setAboutus(aboutus))
+  // }, [])
 
   return (
     <div>
@@ -31,8 +35,8 @@ function Aboutus() {
               <img key={a.id} src={a.img} alt="" className="img_aboutus" />
             ))}
           </div>
-          {/* {addLoading && <p>Загружаю...</p>} 
-          {addLoading} */}
+          {loading && <p>Загружаю...</p>}
+          
           <div>
             <br />
             {aboutus.map((a) => (
@@ -70,6 +74,12 @@ function Aboutus() {
 }
 
 export default Aboutus
+
+ // const toggle = React.useCallback(() => setLoading(!loading));
+
+  // const addLoading = () => {
+  //   setLoading(loading)
+  // }
 
 // class Aboutus extends React.Component {
 // constructor() {
