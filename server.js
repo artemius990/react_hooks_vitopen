@@ -1,7 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
-
 const app = express();
 
 const mongoDB = 'mongodb://127.0.0.1:27017/store';
@@ -14,7 +13,23 @@ const db = mongoose.connection; // Получение подключения п�
 db.on('error', console.error.bind(console, 'MongoDB connection error:')); // Привязать подключение к событию ошибки  (получать сообщения об ошибках подключения)
 
 const port = 5000;
-app.listen(port, () => `Server running on port ${port}`);
+// app.listen(port, () => `Server running on port ${port}`);
+
+async function start() {
+  try {
+    await mongoose.connect(mongoDB), {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true
+    }
+    app.listen(port, () => console.log(`App has been started on port ${port}...`))
+  } catch (e) {
+    console.log('Server Error', e.message)
+    process.exit(1)
+  }
+}
+
+start()
 
 
 ////////////// aboutvit

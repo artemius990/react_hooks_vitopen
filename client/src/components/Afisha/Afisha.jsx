@@ -6,26 +6,26 @@ const  Afisha = () => {
 		 
 	 const [afisha, setAfisha] = useState([])
 	 const [events, setEvents] = useState([])
-	//  const [loading, setLoading] = useState(false)
-	
+		const [loading, setLoading] = useState(false) 
   
-	useEffect(() => {	
-		
-		fetch('/afisha')
-      .then((res) => res.json())
-      .then((afisha) => setAfisha(afisha))
-      
-      fetch('/events')
-      .then((res) => res.json())
-      .then((events) => setEvents(events))
-		
-     }, []) 
+    useEffect(() => {
+      setLoading(!loading)
+      fetch('/afisha')
+        .then((res) => res.json())
+        .then((afisha) => setAfisha(afisha))
+        .then((loading) => setLoading(loading))
 
-     
-    
-  
-  	
-  return (
+    }, [])
+
+    useEffect(() => {
+
+      fetch('/events')
+        .then((res) => res.json())
+        .then((events) => setEvents(events))
+        .then((loading) => setLoading(loading))
+    }, [])
+
+	return (
     <div>      
 
       <div className="container-fluid">
@@ -40,7 +40,7 @@ const  Afisha = () => {
                   {afisha.map(afisha =>{
                   return (
                   <div>
-                    {/* {loading && <p>Загружаю...</p>} */}
+                    {loading && <p>Загружаю...</p>}
 					
                     <img src={afisha.img1} alt="" align="left" className="afisha_img" />
                     <h3 className="af_h3">{afisha.teatr1}</h3>
