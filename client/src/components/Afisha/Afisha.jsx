@@ -1,32 +1,32 @@
-import React, {useState,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import './Afisha.css';
 
 
-const  Afisha = () => { 
-		 
-	 const [afisha, setAfisha] = useState([])
-	 const [events, setEvents] = useState([])
-		const [loading, setLoading] = useState(false) 
-  
-    useEffect(() => {
-      setLoading(!loading)
-      fetch('/afisha')
-        .then((res) => res.json())
-        .then((afisha) => setAfisha(afisha))
-        .then((loading) => setLoading(loading))
+const Afisha = () => {
 
-    }, [])
+  const [afisha, setAfisha] = useState([])
+  const [events, setEvents] = useState([])
+  const [loading, setLoading] = useState(false)
 
-    useEffect(() => {
+  useEffect(() => {
+    setLoading(!loading)
+    fetch('/afisha')
+      .then((res) => res.json())
+      .then((afisha) => setAfisha(afisha))
+      .then((loading) => setLoading(loading))
 
-      fetch('/events')
-        .then((res) => res.json())
-        .then((events) => setEvents(events))
-        .then((loading) => setLoading(loading))
-    }, [])
+  }, [])
 
-	return (
-    <div>      
+  useEffect(() => {
+
+    fetch('/events')
+      .then((res) => res.json())
+      .then((events) => setEvents(events))
+      .then((loading) => setLoading(loading))
+  }, [])
+
+  return (
+    <div>
 
       <div className="container-fluid">
         <div className="row">
@@ -37,34 +37,35 @@ const  Afisha = () => {
                 <div className="h-2 h-md-2 h-xl-2">
                   <h1 className="af_h1">Cмотрите в кинотеатрах:</h1>
 
-                  {afisha.map(afisha =>{
-                  return (
-                  <div>
-                    {loading && <p>Загружаю...</p>}
-					
-                    <img src={afisha.img1} alt="" align="left" className="afisha_img" />
-                    <h3 className="af_h3">{afisha.teatr1}</h3>
-                    <p className="af_f">
-                      <strong> {afisha.af} </strong>
-                      <br />
-                      <br />
-                      {afisha.film}
-                      <br />
-                      <br />
-                      <strong>Cеанс: </strong>
-                      {afisha.seans}
-                      <br />
-                      <br />
-                      <strong>{afisha.pricetitle} </strong>
-                      {afisha.price}
-                      <br />
-                      <br />
-                      {afisha.aboutfilm}
-                      <br />
-                      <strong>{afisha.mainrole} </strong> {afisha.roles}
-                    </p>
-                  </div>
-                  ) }
+                  {afisha.map(afisha => {
+                    return (
+                      <div>
+                        {loading && <p>Загружаю...</p>}
+
+                        <img src={afisha.img1} alt="" align="left" className="afisha_img" />
+                        <h3 className="af_h3">{afisha.teatr1}</h3>
+                        <p className="af_f">
+                          <strong> {afisha.af} </strong>
+                          <br />
+                          <br />
+                          {afisha.film}
+                          <br />
+                          <br />
+                          <strong>Cеанс: </strong>
+                          {afisha.seans}
+                          <br />
+                          <br />
+                          <strong>{afisha.pricetitle} </strong>
+                          {afisha.price}
+                          <br />
+                          <br />
+                          {afisha.aboutfilm}
+                          <br />
+                          <strong>{afisha.mainrole} </strong> {afisha.roles}
+                        </p>
+                      </div>
+                    )
+                  }
                   )}
 
                 </div>
@@ -76,39 +77,40 @@ const  Afisha = () => {
                 <div className="h-2 h-md-2 h-xl-2">
                   <h1 className="af_h1">Cмотрите в кинотеатрах:</h1>
 
-                  {afisha.map(afisha =>{
-                  return (
-                  <div>
-                    {/* {loading && <p>Загружаю...</p>} */}
-                    <img src={afisha.img2} alt="" align="left" className="afisha_img" />
-                    <h3 className="af_h3">{afisha.teatr2}</h3>
-                    <p className="af_f">
-                      <strong> {afisha.af} </strong>
-                      <br />
-                      <br />
-                      {afisha.film}
-                      <br />
-                      <br />
-                      <strong>Cеанс: </strong>
-                      {afisha.seans}
-                      <br />
-                      <br />
-                      <strong>{afisha.pricetitle} </strong>
-                      {afisha.price}
-                      <br />
-                      <br />
-                      {afisha.aboutfilm}
-                      <br />
-                      <strong>{afisha.mainrole} </strong> {afisha.roles}
-                    </p>
-                  </div>
-                  ) }
+                  {afisha.map(afisha => {
+                    return (
+                      <div>
+                        {/* {loading && <p>Загружаю...</p>} */}
+                        <img src={afisha.img2} alt="" align="left" className="afisha_img" />
+                        <h3 className="af_h3">{afisha.teatr2}</h3>
+                        <p className="af_f">
+                          <strong> {afisha.af} </strong>
+                          <br />
+                          <br />
+                          {afisha.film}
+                          <br />
+                          <br />
+                          <strong>Cеанс: </strong>
+                          {afisha.seans}
+                          <br />
+                          <br />
+                          <strong>{afisha.pricetitle} </strong>
+                          {afisha.price}
+                          <br />
+                          <br />
+                          {afisha.aboutfilm}
+                          <br />
+                          <strong>{afisha.mainrole} </strong> {afisha.roles}
+                        </p>
+                      </div>
+                    )
+                  }
                   )}
 
                 </div>
               </div>
             </div>
-                        
+
           </div>
 
           <div className="col-xl-4 col-md-4 col-4">
@@ -119,7 +121,7 @@ const  Afisha = () => {
                   <br />
 
                   {events.map(a =>
-                  <p>{a.one} </p>
+                    <p>{a.one} </p>
                   )}
 
                   <br />
@@ -127,19 +129,19 @@ const  Afisha = () => {
               </div>
             </div>
           </div>
-          
+
         </div>
       </div>
     </div>
   );
-  
+
 }
 
 export default Afisha;
 
 
 // class Afisha extends React.Component {
-	
+
 	// constructor() {
     // super();
     // this.state = {
@@ -161,10 +163,10 @@ export default Afisha;
       // .then(events => this.setState({events, isLoading: false}
       // ));
   // }	
-	
+
 	// render(){
   // const {isLoading}= this.state; 
-  	
+
   // return (
     // <div>      
 
@@ -247,7 +249,7 @@ export default Afisha;
                 // </div>
               // </div>
             // </div>
-                        
+
           // </div>
 
           // <div className="col-xl-4 col-md-4 col-4">
@@ -266,7 +268,7 @@ export default Afisha;
               // </div>
             // </div>
           // </div>
-          
+
         // </div>
       // </div>
     // </div>
