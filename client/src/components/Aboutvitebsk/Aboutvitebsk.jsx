@@ -83,6 +83,8 @@ showNav10 =()=>{
 	this.setState({show5:''});	
 }
 
+
+
 componentDidMount() {
   this.setState({ isLoading: true })
     fetch('/aboutvit')
@@ -95,8 +97,7 @@ componentDidMount() {
       this.setState({vitmain,isLoading: false})	);
   }  
 
-  render() {
-    // let abvit = this.props.abvit;
+  render() {    
     const {isLoading}= this.state;
 
     return (

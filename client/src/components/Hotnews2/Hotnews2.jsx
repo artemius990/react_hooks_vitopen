@@ -7,13 +7,11 @@ import Newsvitandobl from '../Newsvitandobl/Newsvitandobl';
 
 class Hotnews2 extends React.Component {
 	render(){	
-	
   return (
     <div>        
         <News2/>;             
         <Newskorotko />;          
-        <Newsvitandobl />;  
-        
+        <Newsvitandobl />;        
   </div>
   );
   }

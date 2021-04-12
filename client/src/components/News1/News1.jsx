@@ -22,20 +22,15 @@ class News1 extends React.Component {
       .then(res => res.json())
       .then(news => this.setState({news, isLoading: false}
       ));
-
-  }		
-
-
-	render(){
-	
-	const {isLoading}= this.state;
-	
+  }	
+  
+	render(){	
+	const {isLoading}= this.state;	
   return (
     <div>
       {isLoading && <p>Загружаю...</p>}
 
       <article className="news">
-
         {this.state.one.map(news =>{
         return (
         <div>
@@ -65,7 +60,6 @@ class News1 extends React.Component {
         </div>
         ) }
         )}
-
       </article>
     </div>
   );

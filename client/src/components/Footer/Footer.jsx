@@ -1,35 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react'
 import './Footer.css'
 
-
-class Footer extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-    footer:[],
-	  isLoading: false
-    };
-  }
-
-  componentDidMount() {
-	this.setState({ isLoading: true })
-    fetch('/footer')
-      .then(res => res.json())
-      .then(footer => this.setState({footer, isLoading: false}
-      ));
-  }		
-
-
-
-	render(){
+const Footer =()=> {
 	
-  const {isLoading}= this.state;
+  const [footer, setFooter] = useState([])
+  const [loading, setLoading] = useState(false)
   
+  useEffect(() => {
+    setLoading(!loading)
+     fetch('/footer')
+      .then(res => res.json())
+      .then((footer) => setFooter(footer))
+      .then((loading) => setLoading(loading))
+  }, [])  
+
   return (
-    <div>
-      
-      {isLoading && <p>Загружаю...</p>}
-      {this.state.footer.map(footer =>{
+    <div>      
+      {loading && <p>Загружаю...</p>}
+      {footer.map(footer =>{
                   return (
                     <footer>
                     <span className="left">
@@ -41,11 +29,9 @@ class Footer extends React.Component {
                   </span>
                   </footer>
                   ) }
-                  )}       
-      
-    </div>
-  );
-  }
+                  )}  
+       </div>
+  );  
 }
 
 export default Footer;

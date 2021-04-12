@@ -22,13 +22,10 @@ class News3 extends React.Component {
       .then(res => res.json())
       .then(news => this.setState({news, isLoading: false}
       ));
-
   }		
 
-	render(){
-	
-  const {isLoading}= this.state;
-		
+	render(){	
+  const {isLoading}= this.state;		
   return (
     <div>
       {isLoading && <p>Загружаю...</p>}
@@ -65,7 +62,6 @@ class News3 extends React.Component {
         )}
 
       </article>
-
     </div>
   );
   }

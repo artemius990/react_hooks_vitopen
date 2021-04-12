@@ -1,26 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react'
 import './Menu.css'
 import {NavLink} from "react-router-dom";
 
-
-class Menu extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-    menu:[],
-	  };
-  }
-
-  componentDidMount() {
-	
-    fetch('/menu')
+const Menu =()=> {	
+	const [menu, setMenu] = useState([])
+ 
+useEffect(() => {    
+     fetch('/menu')
       .then(res => res.json())
-      .then(menu => this.setState({menu}
-      ));
-  }	
-
-	render(){
-	
+      .then((menu) => setMenu(menu))      
+  }, [])   
+ 
   return (
     <div>
       <div className="clear"></div>
@@ -29,17 +19,13 @@ class Menu extends React.Component {
           <hr />
         </div>
         <menu className="menuHrefs">
-
-          {this.state.menu.map(a =>
+          {menu.map(a =>
           <NavLink to={a.link}>{a.name}</NavLink>
           )}
-
         </menu>
       </center>
     </div>
-
-  );
-  }
+  );  
 }
 
 export default Menu;

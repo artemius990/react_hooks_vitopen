@@ -6,8 +6,7 @@ import Newsvitandobl from '../Newsvitandobl/Newsvitandobl';
 
 
 class Hotnews3 extends React.Component {
-	render(){	
-	
+	render(){		
   return (
     <div>        
           <News3/>;             

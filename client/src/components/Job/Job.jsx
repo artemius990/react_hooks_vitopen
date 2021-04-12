@@ -1,30 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react'
 import './Job.css';
 
+const Job =()=>{
+	
+  const [job, setJob] = useState([])  
 
-class Job extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      job: [],
-    };
-  }
-
-  componentDidMount() {
-	  fetch('/job')
+useEffect(() => {    
+     fetch('/job')
       .then(res => res.json())
-      .then(job => this.setState({job}
-      ));
-  }		
-
-
-
-
-	render(){
-	//let job=this.props.job;
+      .then((job) => setJob(job))      
+  }, []) 
+	
   return (
     <div>
-      {this.state.job.map(job =>{
+      {job.map(job =>{
       return (
       <center>
         <p><b>{job.find}</b></p>
@@ -52,8 +41,7 @@ class Job extends React.Component {
       ) }
       )}
     </div>
-  );
-  }
+  );  
 }
 
 export default Job;
